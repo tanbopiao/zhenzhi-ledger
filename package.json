@@ -1,0 +1,1 @@
+{ "name": "zhenzhi-ledger", "version": "0.1.0", "description": "真值 · 哈希链 append-only 台账，篡改即断链", "type": "commonjs", "main": "ledger.js", "license": "Apache-2.0" }
