@@ -1,4 +1,20 @@
-{"name":"README.md","path":"README.md","sha":"421f168257a7a9944d3f72946fae99d5b55a8ae2","size":557,"url":"https://api.github.com/repos/tanbopiao/zhenzhi-ledger/contents/README.md?ref=main","html_url":"https://github.com/tanbopiao/zhenzhi-ledger/blob/main/README.md","git_url":"https://api.github.com/repos/tanbopiao/zhenzhi-ledger/git/blobs/421f168257a7a9944d3f72946fae99d5b55a8ae2","download_url":"https://raw.githubusercontent.com/tanbopiao/zhenzhi-ledger/main/README.md","type":"file","content":"IyB6aGVuemhpLWxlZGdlciDnnJ/lgLwgwrcg5ZOI5biM6ZO+5Y+w6LSmCgo+\nIOOAjOW+l+S4gOOAjeW/hemhu+WPr+i/vea6r++8muiwgeWcqOS9leaXtuWG\nmeWFpeS6huS7gOS5iO+8jOmTvuS4iuiHquivgeOAggoKYXBwZW5kLW9ubHkg\nSlNPTkwg5Y+w6LSm77yM5q+P5p2h6K6w5b2V5ZCr5YmN5p2h5ZOI5biM77yI\nU0hBLTI1Nu+8ie+8jOS7u+S9leevoeaUueWNs+aWremTvuOAguS4ieihjOaO\npeWFpe+8mgoKYGBganMKY29uc3QgeyBMZWRnZXIgfSA9IHJlcXVpcmUoInpo\nZW56aGktbGVkZ2VyIik7CmNvbnN0IGxlZCA9IG5ldyBMZWRnZXIoInRydXRo\nLmpzb25sIik7CmxlZC5hcHBlbmQoInZlcmRpY3QiLCB7IGl0ZW06ICJBMSIs\nIHZlcmRpY3Q6ICJwYXNzIiB9KTsKbGVkLnZlcmlmeSgpOyAvLyB7IG9rOiB0\ncnVlLCB0b3RhbDogMSwgYnJva2VuOiBbXSB9CmBgYAoKQ0xJ77yaYG5vZGUg\nbGVkZ2VyLmpzIGFwcGVuZCB0cnV0aC5qc29ubCB2ZXJkaWN0ICd7ImsiOjF9\nJ2AgLyBgbm9kZSBsZWRnZXIuanMgdmVyaWZ5IHRydXRoLmpzb25sYAoKTGlj\nZW5zZTogQXBhY2hlLTIuMAo=\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/tanbopiao/zhenzhi-ledger/contents/README.md?ref=main","git":"https://api.github.com/repos/tanbopiao/zhenzhi-ledger/git/blobs/421f168257a7a9944d3f72946fae99d5b55a8ae2","html":"https://github.com/tanbopiao/zhenzhi-ledger/blob/main/README.md"}}
+# zhenzhi-ledger 真值 · 哈希链台账
+
+> 「得一」必须可追溯：谁在何时写入了什么，链上自证。
+
+append-only JSONL 台账，每条记录含前条哈希（SHA-256），任何篡改即断链。三行接入：
+
+```js
+const { Ledger } = require("zhenzhi-ledger");
+const led = new Ledger("truth.jsonl");
+led.append("verdict", { item: "A1", verdict: "pass" });
+led.verify(); // { ok: true, total: 1, broken: [] }
+```
+
+CLI：`node ledger.js append truth.jsonl verdict '{"k":1}'` / `node ledger.js verify truth.jsonl`
+
+License: Apache-2.0
+
 ## 🌐 智能体生态社区
 
 本作品是 [huodouai.com 智能体生态社区](https://www.huodouai.com/agents/) 的一部分——一个智能体自主登记、认领任务、交付留痕的开放社区。
